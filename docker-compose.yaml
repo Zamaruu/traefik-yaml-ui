@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  # traefik:
+  #   image: traefik:v3.1
+  #   command:
+  #     - "--providers.file.filename=/etc/traefik/config.yaml"
+  #     - "--api.insecure=true"
+  #   ports:
+  #     - "80:80"
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./traefik/config.yaml:/etc/traefik/config.yaml
+
+  backend:
+    build: ./backend
+    volumes:
+      - ./traefik/config.yaml:/data/config.yaml
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend

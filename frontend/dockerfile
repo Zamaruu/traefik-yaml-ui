@@ -1,0 +1,14 @@
+# Build Stage
+FROM dart:3.3 AS build
+WORKDIR /app
+COPY pubspec.* ./
+RUN dart pub get
+COPY . .
+RUN dart pub get --offline
+RUN dart compile js lib/main.dart -o build/main.dart.js
+
+# Serve Stage (nginx)
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
