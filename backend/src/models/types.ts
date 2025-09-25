@@ -15,7 +15,7 @@ export interface Middleware {
     ipAllowList?: {
         sourceRange: string[];
     };
-    forwardauth?: {
+    forwardAuth?: {
         address: string;
         trustForwardHeader?: boolean;
     };
@@ -42,6 +42,6 @@ export interface Router {
     entryPoints: string[];
     middlewares?: string[];
     tls?: {
-        certresolver?: string;
+        certResolver?: string;
     };
 }

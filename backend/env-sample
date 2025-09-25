@@ -1,0 +1,2 @@
+TRAEFIK_CONFIG_PATH=./sample_traefik_config.yml
+PORT=3000
