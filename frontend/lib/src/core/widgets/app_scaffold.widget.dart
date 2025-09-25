@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/src/core/widgets/app_traefik_logo.widget.dart';
 
 class AppScaffold extends StatelessWidget {
   final String title;
@@ -15,6 +16,7 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const TraefikLogo(),
         title: Text(title),
         backgroundColor: appBarColor,
         foregroundColor: Colors.white,
