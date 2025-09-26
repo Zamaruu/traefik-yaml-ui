@@ -25,7 +25,7 @@ class ValueResponse<T extends Object> extends BaseResponse implements IValueResp
     super.exception,
     super.message,
     super.stackTrace,
-  }) : super.success();
+  }) : super.error();
 
   // --------------------------------------------------------------------
   // Getter

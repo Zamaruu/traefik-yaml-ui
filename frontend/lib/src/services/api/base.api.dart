@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:frontend/src/data/interfaces/core/response.interface.dart';
 
-abstract class BaseApi {
+abstract class BaseApi<T extends Object> {
   final Dio client;
 
   BaseApi(this.client);
@@ -14,5 +15,5 @@ abstract class BaseApi {
   // ------------------------------------------------------------------------
   // Requests
 
-  Future<void> get({ProgressCallback? onProgress});
+  Future<IValueResponse<T>> get({ProgressCallback? onProgress});
 }

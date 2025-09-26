@@ -1,9 +1,12 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/router.dart';
+import 'package:frontend/service_locator.dart';
 import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
 import 'package:frontend/src/core/widgets/app_screen.widget.dart';
 import 'package:frontend/src/data/enums/initstate.enum.dart';
 import 'package:frontend/src/modules/error/widgets/error.widget.dart';
+import 'package:frontend/src/services/api/config.api.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRoot extends StatefulScreenWidget {
@@ -29,8 +32,17 @@ class _AppRootState extends State<AppRoot> {
 
   void _mockedLoader() async {
     await Future.delayed(const Duration(seconds: 2));
-    if (mounted) {
+
+    final httpClient = services.get<Dio>();
+    final configController = ConfigApiController(httpClient);
+    final configJsonResponse = await configController.get();
+
+    if (mounted && configJsonResponse.isSuccess) {
       context.go(AppRouter.kDashboardRoute);
+    } else {
+      setState(() {
+        appState = EInitState.error;
+      });
     }
   }
 
@@ -47,7 +59,7 @@ class _AppRootState extends State<AppRoot> {
             } else if (appState == EInitState.loading || appState == EInitState.uninitalized) {
               return const CircularProgressIndicator();
             } else {
-              return const AppErrorInfoBox(error: "Fehler bei der initalisierung");
+              return const AppErrorInfoBox(error: "Fehler bei der Initalisierung");
             }
           },
         ),
