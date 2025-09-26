@@ -1,4 +1,4 @@
-import 'package:frontend/src/models/objects/config/http/forwardauth.model.dart';
+import 'package:frontend/src/data/objects/config/http/forwardauth.model.dart';
 
 class Http {
   List<Middleware?>? middlewares;
