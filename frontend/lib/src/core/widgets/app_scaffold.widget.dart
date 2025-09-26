@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:frontend/src/core/widgets/app_appbar.widget.dart';
-import 'package:frontend/src/core/widgets/app_traefik_logo.widget.dart';
 import 'package:frontend/src/core/widgets/menu/app_menu.widget.dart';
 
 class AppScaffold extends StatelessWidget {

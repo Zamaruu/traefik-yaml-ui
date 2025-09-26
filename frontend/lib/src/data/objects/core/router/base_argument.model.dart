@@ -1,4 +1,4 @@
-import 'package:frontend/src/models/objects/core/router/router_argument.abstract.dart';
+import 'package:frontend/src/data/objects/core/router/router_argument.abstract.dart';
 import 'package:go_router/go_router.dart';
 
 class BaseArgument extends RouterArgument {

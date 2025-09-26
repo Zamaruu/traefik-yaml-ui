@@ -1,9 +1,13 @@
+import 'dart:ui_web';
+
 import 'package:flutter/material.dart';
 import 'package:frontend/router.dart';
 import 'package:frontend/src/global/typedefs.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  usePathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(

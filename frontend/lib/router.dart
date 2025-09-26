@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:frontend/src/core/extensions/packages/gorouter.extensions.dart';
 import 'package:frontend/src/global/typedefs.dart';
-import 'package:frontend/src/models/interfaces/core/routable_screen.interface.dart';
+import 'package:frontend/src/modules/dashboard/screens/dashboard.screen.dart';
 import 'package:frontend/src/modules/error/screens/error.screen.dart';
 import 'package:frontend/src/modules/root/screens/approot.screen.dart';
 import 'package:go_router/go_router.dart';
@@ -13,6 +12,8 @@ class AppRouter {
   static const kRootRoute = "/";
 
   static const kErrorRoute = "/error";
+
+  static const kDashboardRoute = "/dashboard";
 
   // -----------------------------------------------------------------------------------
   // Routes
@@ -26,6 +27,15 @@ class AppRouter {
         path: kRootRoute,
         builder: (context, state) {
           return AppRoot(argument: state.asArgument);
+        },
+      ),
+    );
+
+    routes.add(
+      GoRoute(
+        path: kDashboardRoute,
+        builder: (context, state) {
+          return DashboardScreen(argument: state.asArgument);
         },
       ),
     );
