@@ -22,20 +22,34 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppAppBar(title: title),
-      body: Row(
-        children: [
-          if (kIsWeb && disableMenu == false)
-            const SizedBox(
-              width: 200,
-              child: AppMenu(),
-            ),
-          Expanded(
-            child: body,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final isMobile = constraints.maxWidth <= 700;
+
+        return Scaffold(
+          appBar: AppAppBar(
+            title: title,
+            canOpenDrawer: isMobile,
           ),
-        ],
-      ),
+          drawer: isMobile
+              ? const Drawer(
+                  child: AppMenu(),
+                )
+              : null,
+          body: Row(
+            children: [
+              if (kIsWeb && disableMenu == false && isMobile == false)
+                const SizedBox(
+                  width: 200,
+                  child: AppMenu(),
+                ),
+              Expanded(
+                child: body,
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

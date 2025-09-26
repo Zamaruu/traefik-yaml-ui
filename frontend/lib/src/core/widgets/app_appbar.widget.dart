@@ -8,9 +8,12 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   final Color appBarColor;
 
+  final bool canOpenDrawer;
+
   const AppAppBar({
     super.key,
     required this.title,
+    this.canOpenDrawer = false,
     this.appBarColor = const Color(0xff24a1c1),
   });
 
@@ -20,21 +23,40 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: const TraefikLogo(),
+      leading: Center(
+        child: Tooltip(
+          message: canOpenDrawer ? "App Menü öffnen" : "Traefik Logo",
+          child: GestureDetector(
+            onTap: canOpenDrawer
+                ? () {
+                    Scaffold.of(context).openDrawer();
+                  }
+                : null,
+            child: const TraefikLogo(),
+          ),
+        ),
+      ),
       title: Text(title),
       backgroundColor: appBarColor,
       foregroundColor: Colors.white,
       actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.refresh),
+          tooltip: "Zurücksetzen der lokalen Änderungen und laden der Config vom Server",
+        ),
         IconButton(
           onPressed: () {
             final githubUri = Uri.parse("https://github.com/Zamaruu");
             launchUrl(githubUri);
           },
           icon: const Icon(MdiIcons.github),
+          tooltip: "Mein Github",
         ),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.logout),
+          tooltip: "Abmelden",
         ),
       ],
     );
