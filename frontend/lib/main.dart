@@ -40,6 +40,7 @@ class _TraefikUiAppState extends State<TraefikUiApp> {
       title: "Treafik UI",
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
+      color: const Color(0xff24a1c1),
     );
   }
 }

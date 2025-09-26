@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
 import 'package:frontend/src/core/widgets/app_traefik_logo.widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -25,7 +26,10 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       foregroundColor: Colors.white,
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            final githubUri = Uri.parse("https://github.com/Zamaruu");
+            launchUrl(githubUri);
+          },
           icon: const Icon(MdiIcons.github),
         ),
         IconButton(

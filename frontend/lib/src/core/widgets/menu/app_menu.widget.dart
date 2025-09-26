@@ -6,38 +6,45 @@ class AppMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        AppMenuTile(
-          leadingIcon: Icons.home,
-          title: "Dashboard",
+    return const DecoratedBox(
+      decoration: BoxDecoration(
+        border: Border(
+          right: BorderSide(color: Colors.grey, width: 0.5),
         ),
-        AppMenuTile(
-          leadingIcon: Icons.router,
-          title: "Router",
-        ),
-        AppMenuTile(
-          leadingIcon: Icons.miscellaneous_services,
-          title: "Services",
-        ),
-        AppMenuTile(
-          leadingIcon: Icons.account_tree,
-          title: "Middlewares",
-        ),
-        Spacer(),
-        AppMenuTile(
-          leadingIcon: Icons.settings,
-          title: "Einstellungen",
-        ),
-        AppMenuTile(
-          leadingIcon: Icons.list_alt,
-          title: "Logs",
-        ),
-        AppMenuTile(
-          leadingIcon: Icons.person,
-          title: "Benutzer",
-        ),
-      ],
+      ),
+      child: Column(
+        children: [
+          AppMenuTile(
+            leadingIcon: Icons.home,
+            title: "Dashboard",
+          ),
+          AppMenuTile(
+            leadingIcon: Icons.router,
+            title: "Router",
+          ),
+          AppMenuTile(
+            leadingIcon: Icons.miscellaneous_services,
+            title: "Services",
+          ),
+          AppMenuTile(
+            leadingIcon: Icons.account_tree,
+            title: "Middlewares",
+          ),
+          Spacer(),
+          AppMenuTile(
+            leadingIcon: Icons.settings,
+            title: "Einstellungen",
+          ),
+          AppMenuTile(
+            leadingIcon: Icons.list_alt,
+            title: "Logs",
+          ),
+          AppMenuTile(
+            leadingIcon: Icons.person,
+            title: "Benutzer",
+          ),
+        ],
+      ),
     );
   }
 }
