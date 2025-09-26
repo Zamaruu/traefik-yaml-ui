@@ -3,6 +3,7 @@ import yaml from "js-yaml";
 import dotenv from "dotenv";
 import { TraefikConfig } from "./models/types";
 import express, { Request, Response } from "express";
+import {loadConfig} from "./controller/config.controller";
 
 dotenv.config();
 
@@ -17,8 +18,7 @@ if (!configPath) {
 // Beispiel-Endpunkt mit Typen
 app.get("/config", (req: Request, res: Response) => {
     try {
-        const fileContent = fs.readFileSync(configPath, "utf8");
-        const parsed = yaml.load(fileContent) as TraefikConfig;
+        const parsed = loadConfig(configPath);
 
         res.json(parsed);
     } catch (err) {
