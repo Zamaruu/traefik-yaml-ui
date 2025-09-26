@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import express from "express";
+import cors from "cors";
 import configRouter from "./controller/config.controller";
 
 dotenv.config();
@@ -13,6 +14,9 @@ if (!path) {
 }
 
 export const configPath = path;
+
+// 🚀 CORS aktivieren (für alle Domains)
+app.use(cors());
 
 app.use("/config", configRouter);
 
