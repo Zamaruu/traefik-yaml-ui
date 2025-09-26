@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:frontend/router.dart';
 import 'package:frontend/service_locator.dart';
 import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
@@ -38,6 +39,12 @@ class _AppRootState extends State<AppRoot> {
     final configJsonResponse = await configController.get();
 
     if (mounted && configJsonResponse.isSuccess) {
+      Fluttertoast.showToast(
+        msg: "Config erfolgreich abgerufen",
+        backgroundColor: Colors.green,
+        gravity: ToastGravity.TOP_RIGHT,
+        toastLength: Toast.LENGTH_LONG,
+      );
       context.go(AppRouter.kDashboardRoute);
     } else {
       setState(() {
