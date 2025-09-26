@@ -39,6 +39,7 @@ class _TraefikUiAppState extends State<TraefikUiApp> {
     return MaterialApp.router(
       title: "Treafik UI",
       routerConfig: appRouter,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
