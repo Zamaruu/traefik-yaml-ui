@@ -1,8 +1,10 @@
-import {Middleware, Router, ServersTransport, Service, TraefikConfig} from "../models/types";
+import {NextFunction, Router} from "express";
+import {Middleware, TraefikRouter, ServersTransport, Service, TraefikConfig} from "../models/types";
 import fs from "fs";
 import yaml from "js-yaml";
+import {configPath} from "../server";
 
-export function loadConfig(path: string): TraefikConfig {
+function loadConfig(path: string): TraefikConfig {
     const raw = yaml.load(fs.readFileSync(path, "utf8")) as any;
 
     const http = raw.http;
@@ -19,7 +21,7 @@ export function loadConfig(path: string): TraefikConfig {
         ([name, value]: [string, any]) => ({ name, ...value })
     );
 
-    const routers: Router[] = Object.entries(http.routers || {}).map(
+    const routers: TraefikRouter[] = Object.entries(http.routers || {}).map(
         ([name, value]: [string, any]) => ({ name, ...value })
     );
 
@@ -33,7 +35,7 @@ export function loadConfig(path: string): TraefikConfig {
     };
 }
 
-export function saveConfig(config: TraefikConfig, path: string) {
+function saveConfig(config: TraefikConfig, path: string) {
     const http = config.http;
 
     const middlewares = Object.fromEntries(
@@ -69,3 +71,20 @@ export function saveConfig(config: TraefikConfig, path: string) {
 
     fs.writeFileSync(path, yamlStr, "utf8");
 }
+
+const router = Router();
+
+router.get("/", (req , res) => {
+
+    try {
+        const parsed = loadConfig(configPath);
+
+        res.json(parsed);
+    } catch (err) {
+        console.error("Fehler beim Laden der Config:", err);
+        res.status(500).json({ error: "Konnte Config nicht laden" });
+    }
+})
+
+
+export default router;

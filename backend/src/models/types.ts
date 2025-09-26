@@ -6,7 +6,7 @@ export interface HttpConfig {
     middlewares?: Middleware[];
     serversTransports?: ServersTransport[];
     services?: Service[];
-    routers?: Router[];
+    routers?: TraefikRouter[];
 }
 
 // Middleware
@@ -41,7 +41,7 @@ export interface Server {
 }
 
 // Router
-export interface Router {
+export interface TraefikRouter {
     name: string; // z. B. "plex_router"
     rule: string;
     service: string;
