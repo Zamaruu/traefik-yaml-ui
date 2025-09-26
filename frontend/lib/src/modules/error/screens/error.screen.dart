@@ -7,8 +7,9 @@ class ErrorScreen extends StatelessScreenWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
+    return const AppScaffold(
       title: "Error",
+      body: Placeholder(),
     );
   }
 }

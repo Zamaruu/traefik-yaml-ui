@@ -7,8 +7,9 @@ class AppRoot extends StatelessScreenWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
+    return const AppScaffold(
       title: "Traefik Config UI",
+      body: Placeholder(),
     );
   }
 }
