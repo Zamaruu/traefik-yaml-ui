@@ -1,21 +1,4 @@
-class Forwardauth {
-  String? address;
-  bool? trustForwardHeader;
-
-  Forwardauth({this.address, this.trustForwardHeader});
-
-  Forwardauth.fromJson(Map<String, dynamic> json) {
-    address = json['address'];
-    trustForwardHeader = json['trustForwardHeader'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['address'] = address;
-    data['trustForwardHeader'] = trustForwardHeader;
-    return data;
-  }
-}
+import 'package:frontend/src/models/objects/config/http/forwardauth.model.dart';
 
 class Http {
   List<Middleware?>? middlewares;
@@ -107,14 +90,14 @@ class LoadBalancer {
 class Middleware {
   String? name;
   IpAllowList? ipAllowList;
-  Forwardauth? forwardauth;
+  ForwardAuth? forwardauth;
 
   Middleware({this.name, this.ipAllowList, this.forwardauth});
 
   Middleware.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     ipAllowList = json['ipAllowList'] != null ? IpAllowList?.fromJson(json['ipAllowList']) : null;
-    forwardauth = json['forwardauth'] != null ? Forwardauth?.fromJson(json['forwardauth']) : null;
+    forwardauth = json['forwardauth'] != null ? ForwardAuth?.fromJson(json['forwardauth']) : null;
   }
 
   Map<String, dynamic> toJson() {

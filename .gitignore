@@ -24,6 +24,7 @@ frontend/android/.gradle/
 frontend/android/app/build/
 frontend/android/local.properties
 frontend/pubspec.lock
+frontend/lib/*.g.dart
 
 # ---- Docker ----
 *.pid
