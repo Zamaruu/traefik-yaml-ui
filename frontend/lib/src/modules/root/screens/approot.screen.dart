@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:frontend/router.dart';
 import 'package:frontend/service_locator.dart';
+import 'package:frontend/src/core/helper/notifications.helper.dart';
 import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
 import 'package:frontend/src/core/widgets/app_screen.widget.dart';
 import 'package:frontend/src/data/enums/initstate.enum.dart';
+import 'package:frontend/src/data/enums/notification.enum.dart';
 import 'package:frontend/src/modules/error/widgets/error.widget.dart';
 import 'package:frontend/src/services/api/config.api.dart';
 import 'package:go_router/go_router.dart';
@@ -39,14 +40,21 @@ class _AppRootState extends State<AppRoot> {
     final configJsonResponse = await configController.get();
 
     if (mounted && configJsonResponse.isSuccess) {
-      Fluttertoast.showToast(
-        msg: "Config erfolgreich abgerufen",
-        backgroundColor: Colors.green,
-        gravity: ToastGravity.TOP_RIGHT,
-        toastLength: Toast.LENGTH_LONG,
+      NotificationHelper.showNotification(
+        context: context,
+        title: "Config erfolgreich geladen",
+        type: ENotification.success,
       );
       context.go(AppRouter.kDashboardRoute);
     } else {
+      if (mounted) {
+        NotificationHelper.showNotification(
+          context: context,
+          title: "Fehler beim laden der Config",
+          description: configJsonResponse.message,
+          type: ENotification.error,
+        );
+      }
       setState(() {
         appState = EInitState.error;
       });

@@ -4,10 +4,10 @@ part 'forwardauth.model.g.dart';
 
 @JsonSerializable()
 class ForwardAuth {
-  String? address;
-  bool? trustForwardHeader;
+  final String? address;
+  final bool? trustForwardHeader;
 
-  ForwardAuth({this.address, this.trustForwardHeader});
+  const ForwardAuth({this.address, this.trustForwardHeader});
 
   Map<String, dynamic> toJson() => _$ForwardAuthToJson(this);
 

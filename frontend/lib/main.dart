@@ -1,11 +1,10 @@
-import 'dart:ui_web';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:frontend/router.dart';
 import 'package:frontend/src/global/typedefs.dart';
 import 'package:frontend/src/services/app_initalizer.service.dart';
 import 'package:go_router/go_router.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:toastification/toastification.dart';
 
 void main() async {
   usePathUrlStrategy();
@@ -44,11 +43,13 @@ class _TraefikUiAppState extends State<TraefikUiApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: "Treafik UI",
-      routerConfig: appRouter,
-      debugShowCheckedModeBanner: false,
-      color: const Color(0xff24a1c1),
+    return ToastificationWrapper(
+      child: MaterialApp.router(
+        title: "Treafik UI",
+        routerConfig: appRouter,
+        debugShowCheckedModeBanner: false,
+        color: const Color(0xff24a1c1),
+      ),
     );
   }
 }
