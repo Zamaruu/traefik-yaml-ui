@@ -7,7 +7,7 @@ class AppMenu extends StatelessWidget {
   const AppMenu({super.key});
 
   void _navigateTo(BuildContext context, String route) {
-    context.push(route);
+    context.go(route);
   }
 
   @override
@@ -25,9 +25,10 @@ class AppMenu extends StatelessWidget {
             title: "Dashboard",
             onPressed: () => _navigateTo(context, AppRouter.kDashboardRoute),
           ),
-          const AppMenuTile(
+          AppMenuTile(
             leadingIcon: Icons.router,
             title: "Router",
+            onPressed: () => _navigateTo(context, AppRouter.kHttpRoutersRoute),
           ),
           const AppMenuTile(
             leadingIcon: Icons.miscellaneous_services,
