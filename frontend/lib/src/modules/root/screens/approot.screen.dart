@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:frontend/router.dart';
 import 'package:frontend/service_locator.dart';
 import 'package:frontend/src/core/helper/notifications.helper.dart';
@@ -8,17 +9,18 @@ import 'package:frontend/src/core/widgets/app_screen.widget.dart';
 import 'package:frontend/src/data/enums/initstate.enum.dart';
 import 'package:frontend/src/data/enums/notification.enum.dart';
 import 'package:frontend/src/modules/error/widgets/error.widget.dart';
+import 'package:frontend/src/modules/root/provider/rootconfig.provider.dart';
 import 'package:frontend/src/services/api/config.api.dart';
 import 'package:go_router/go_router.dart';
 
-class AppRoot extends StatefulScreenWidget {
+class AppRoot extends ConsumerStatefulScreenWidget {
   const AppRoot({super.key, required super.argument});
 
   @override
-  State<AppRoot> createState() => _AppRootState();
+  ConsumerState<AppRoot> createState() => _AppRootState();
 }
 
-class _AppRootState extends State<AppRoot> {
+class _AppRootState extends ConsumerState<AppRoot> {
   late EInitState appState;
 
   @override
@@ -37,21 +39,24 @@ class _AppRootState extends State<AppRoot> {
 
     final httpClient = services.get<Dio>();
     final configController = ConfigApiController(httpClient);
-    final configJsonResponse = await configController.get();
+    final configResponse = await configController.get();
 
-    if (mounted && configJsonResponse.isSuccess) {
+    if (mounted && configResponse.isSuccess && configResponse.hasValue) {
+      ref.read(configRootProvider.notifier).setConfig(configResponse.value!);
+
       NotificationHelper.showNotification(
         context: context,
         title: "Config erfolgreich geladen",
         type: ENotification.success,
       );
+
       context.go(AppRouter.kDashboardRoute);
     } else {
       if (mounted) {
         NotificationHelper.showNotification(
           context: context,
           title: "Fehler beim laden der Config",
-          description: configJsonResponse.message,
+          description: configResponse.message,
           type: ENotification.error,
         );
       }
