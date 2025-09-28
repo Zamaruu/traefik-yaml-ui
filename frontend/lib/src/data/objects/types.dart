@@ -1,6 +1,5 @@
 import 'package:frontend/src/data/objects/config/http/forwardauth.model.dart';
 
-
 class IpAllowList {
   List<String?>? sourceRange;
 
@@ -15,30 +14,6 @@ class IpAllowList {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['sourceRange'] = sourceRange?.toList();
-    return data;
-  }
-}
-
-class LoadBalancer {
-  List<Server?>? servers;
-  String? serversTransport;
-
-  LoadBalancer({this.servers, this.serversTransport});
-
-  LoadBalancer.fromJson(Map<String, dynamic> json) {
-    if (json['servers'] != null) {
-      servers = <Server>[];
-      json['servers'].forEach((v) {
-        servers!.add(Server.fromJson(v));
-      });
-    }
-    serversTransport = json['serversTransport'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['servers'] = servers?.map((v) => v?.toJson()).toList();
-    data['serversTransport'] = serversTransport;
     return data;
   }
 }
@@ -96,25 +71,6 @@ class ServersTransport {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['name'] = name;
     data['insecureSkipVerify'] = insecureSkipVerify;
-    return data;
-  }
-}
-
-class Service {
-  String? name;
-  LoadBalancer? loadBalancer;
-
-  Service({this.name, this.loadBalancer});
-
-  Service.fromJson(Map<String, dynamic> json) {
-    name = json['name'];
-    loadBalancer = json['loadBalancer'] != null ? LoadBalancer?.fromJson(json['loadBalancer']) : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['name'] = name;
-    data['loadBalancer'] = loadBalancer!.toJson();
     return data;
   }
 }

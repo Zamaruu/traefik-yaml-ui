@@ -1,4 +1,5 @@
 import 'package:frontend/src/data/objects/config/http/httprouter.model.dart';
+import 'package:frontend/src/data/objects/config/http/httpservice.model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'httpconfig.model.g.dart';
@@ -7,13 +8,13 @@ part 'httpconfig.model.g.dart';
 class Http {
   // final List<Middleware?>? middlewares;
   // final List<ServersTransport?>? serversTransports;
-  // final List<Service?>? services;
+  final List<HttpService?>? services;
   final List<HttpRouter?>? routers;
 
   const Http({
     // this.middlewares,
     // this.serversTransports,
-    // this.services,
+    this.services,
     this.routers,
   });
 

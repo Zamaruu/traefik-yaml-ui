@@ -3,6 +3,7 @@ import 'package:frontend/src/global/typedefs.dart';
 import 'package:frontend/src/modules/dashboard/screens/dashboard.screen.dart';
 import 'package:frontend/src/modules/error/screens/error.screen.dart';
 import 'package:frontend/src/modules/http/screens/httprouter.screen.dart';
+import 'package:frontend/src/modules/http/screens/httpservices.screen.dart';
 import 'package:frontend/src/modules/root/screens/approot.screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,6 +18,8 @@ class AppRouter {
   static const kDashboardRoute = "/dashboard";
 
   static const kHttpRoutersRoute = "/http/router";
+
+  static const kHttpServicesRoute = "/http/services";
 
   // -----------------------------------------------------------------------------------
   // Routes
@@ -49,6 +52,15 @@ class AppRouter {
         path: kHttpRoutersRoute,
         builder: (context, state) {
           return HttpRouterScreen(argument: state.asArgument);
+        },
+      ),
+    );
+
+    routes.add(
+      GoRoute(
+        path: kHttpServicesRoute,
+        builder: (context, state) {
+          return HttpServicesScreen(argument: state.asArgument);
         },
       ),
     );

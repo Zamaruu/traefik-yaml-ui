@@ -30,9 +30,10 @@ class AppMenu extends StatelessWidget {
             title: "Router",
             onPressed: () => _navigateTo(context, AppRouter.kHttpRoutersRoute),
           ),
-          const AppMenuTile(
+          AppMenuTile(
             leadingIcon: Icons.miscellaneous_services,
             title: "Services",
+            onPressed: () => _navigateTo(context, AppRouter.kHttpServicesRoute),
           ),
           const AppMenuTile(
             leadingIcon: Icons.account_tree,
