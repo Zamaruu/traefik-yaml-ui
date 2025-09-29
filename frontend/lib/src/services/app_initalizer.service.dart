@@ -15,8 +15,9 @@ class AppInitalizerService {
 
   Future<IResponse> _initializeDio() async {
     try {
+      final originUrl = Uri.base.host;
       final options = BaseOptions(
-        baseUrl: "http://localhost:3000/",
+        baseUrl: "http://$originUrl:3000",
       );
 
       final client = Dio(options);

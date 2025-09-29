@@ -1,2 +1,2 @@
-TRAEFIK_CONFIG_PATH=./sample_traefik_config.yml
+TRAEFIK_CONFIG_PATH=./sample_traefik_config.yaml
 PORT=3000
