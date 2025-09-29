@@ -15,7 +15,9 @@ services:
   backend:
     build: ./backend
     volumes:
-      - ./traefik/config.yaml:/data/config.yaml
+      - ./backend/sample_traefik_config.yaml:/data/config.yaml
+    environment:
+      - TRAEFIK_CONFIG_PATH=/data/config.yaml
     ports:
       - "3000:3000"
 

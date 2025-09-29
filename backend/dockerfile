@@ -1,10 +1,17 @@
 FROM node:20-alpine
 
 WORKDIR /app
-COPY package*.json ./
-RUN npm install --production
 
+# Dependencies installieren
+COPY package*.json ./
+RUN npm install
+
+# Source rein
+COPY tsconfig.json ./
 COPY src ./src
+
+# Build
+RUN npm run build
 
 EXPOSE 3000
 CMD ["npm", "start"]
