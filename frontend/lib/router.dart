@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:frontend/src/core/extensions/packages/gorouter.extensions.dart';
+import 'package:frontend/src/data/interfaces/core/routable_screen.interface.dart';
 import 'package:frontend/src/global/typedefs.dart';
 import 'package:frontend/src/modules/dashboard/screens/dashboard.screen.dart';
 import 'package:frontend/src/modules/error/screens/error.screen.dart';
@@ -31,18 +33,22 @@ class AppRouter {
     routes.add(
       GoRoute(
         path: kRootRoute,
-        builder: (context, state) {
-          return AppRoot(argument: state.asArgument);
-        },
+        pageBuilder: (context, state) => _pageBuilder(
+          context,
+          state,
+          screen: AppRoot(argument: state.asArgument),
+        ),
       ),
     );
 
     routes.add(
       GoRoute(
         path: kDashboardRoute,
-        builder: (context, state) {
-          return DashboardScreen(argument: state.asArgument);
-        },
+        pageBuilder: (context, state) => _pageBuilder(
+          context,
+          state,
+          screen: DashboardScreen(argument: state.asArgument),
+        ),
       ),
     );
 
@@ -50,18 +56,22 @@ class AppRouter {
     routes.add(
       GoRoute(
         path: kHttpRoutersRoute,
-        builder: (context, state) {
-          return HttpRouterScreen(argument: state.asArgument);
-        },
+        pageBuilder: (context, state) => _pageBuilder(
+          context,
+          state,
+          screen: HttpRouterScreen(argument: state.asArgument),
+        ),
       ),
     );
 
     routes.add(
       GoRoute(
         path: kHttpServicesRoute,
-        builder: (context, state) {
-          return HttpServicesScreen(argument: state.asArgument);
-        },
+        pageBuilder: (context, state) => _pageBuilder(
+          context,
+          state,
+          screen: HttpServicesScreen(argument: state.asArgument),
+        ),
       ),
     );
 
@@ -71,9 +81,13 @@ class AppRouter {
     routes.add(
       GoRoute(
         path: kErrorRoute,
-        builder: (context, state) {
-          return ErrorScreen(argument: state.asArgument);
-        },
+        pageBuilder: (context, state) => _pageBuilder(
+          context,
+          state,
+          screen: ErrorScreen(
+            argument: state.asArgument,
+          ),
+        ),
       ),
     );
 
@@ -89,6 +103,15 @@ class AppRouter {
     return GoRouter(
       navigatorKey: navKey,
       routes: _routeBuilder(),
+    );
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Helper
+
+  static Page _pageBuilder(BuildContext context, GoRouterState state, {required IRoutableScreen screen}) {
+    return NoTransitionPage(
+      child: screen,
     );
   }
 }
