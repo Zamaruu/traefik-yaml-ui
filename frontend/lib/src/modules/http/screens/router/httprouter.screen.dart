@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:frontend/router.dart';
+import 'package:frontend/src/core/extensions/sdk/context.extensions.dart';
 import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
 import 'package:frontend/src/core/widgets/app_screen.widget.dart';
 import 'package:frontend/src/modules/http/provider/httprouter.provider.dart';
+import 'package:frontend/src/modules/http/screens/router/httprouteredit.screen.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HttpRouterScreen extends ConsumerScreenWidget {
   const HttpRouterScreen({super.key, required super.argument});
+
+  void _openRouterEditScreen(BuildContext context, String? routerName) {
+    final editRouterArgument = HttpRouterEditArgument(routerName: routerName);
+
+    context.pushRoute(
+      AppRouter.kHttpRoutersEditRoute,
+      argument: editRouterArgument,
+    );
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -50,6 +63,7 @@ class HttpRouterScreen extends ConsumerScreenWidget {
                 return ListTile(
                   title: Text(router.name ?? "<kein Name>"),
                   subtitle: Text(router.rule ?? "<keine Rule>"),
+                  onTap: () => _openRouterEditScreen(context, router.name),
                 );
               },
             ),

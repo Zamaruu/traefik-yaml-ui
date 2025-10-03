@@ -4,10 +4,12 @@ import 'package:frontend/src/data/interfaces/core/routable_screen.interface.dart
 import 'package:frontend/src/global/typedefs.dart';
 import 'package:frontend/src/modules/dashboard/screens/dashboard.screen.dart';
 import 'package:frontend/src/modules/error/screens/error.screen.dart';
-import 'package:frontend/src/modules/http/screens/httprouter.screen.dart';
-import 'package:frontend/src/modules/http/screens/httpservices.screen.dart';
+import 'package:frontend/src/modules/http/screens/router/httprouter.screen.dart';
+import 'package:frontend/src/modules/http/screens/services/httpservices.screen.dart';
 import 'package:frontend/src/modules/root/screens/approot.screen.dart';
 import 'package:go_router/go_router.dart';
+
+import 'src/modules/http/screens/router/httprouteredit.screen.dart';
 
 class AppRouter {
   // -----------------------------------------------------------------------------------
@@ -20,6 +22,8 @@ class AppRouter {
   static const kDashboardRoute = "/dashboard";
 
   static const kHttpRoutersRoute = "/http/router";
+
+  static const kHttpRoutersEditRoute = "$kHttpRoutersRoute/edit";
 
   static const kHttpServicesRoute = "/http/services";
 
@@ -53,7 +57,9 @@ class AppRouter {
     );
 
     // Http
-    routes.add(
+    // Routers
+
+    routes.addAll([
       GoRoute(
         path: kHttpRoutersRoute,
         pageBuilder: (context, state) => _pageBuilder(
@@ -62,7 +68,15 @@ class AppRouter {
           screen: HttpRouterScreen(argument: state.asArgument),
         ),
       ),
-    );
+      GoRoute(
+        path: kHttpRoutersEditRoute,
+        pageBuilder: (context, state) => _pageBuilder(
+          context,
+          state,
+          screen: HttpRouterEditScreen(argument: HttpRouterEditArgument.fromState(state)),
+        ),
+      ),
+    ]);
 
     routes.add(
       GoRoute(
