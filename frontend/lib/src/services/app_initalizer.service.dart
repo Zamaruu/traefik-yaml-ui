@@ -25,7 +25,6 @@ class AppInitalizerService {
       services.registerSingleton(client);
       return const BaseResponse.success();
     } catch (e, st) {
-      print(e);
       return BaseResponse.error(exception: e, stackTrace: st);
     }
   }

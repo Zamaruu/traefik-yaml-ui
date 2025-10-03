@@ -8,16 +8,16 @@ class HttpRouter {
   final String? name;
   final String? rule;
   final String? service;
-  final List<String?>? entryPoints;
-  final List<String?>? middlewares;
+  final List<String> entryPoints;
+  final List<String> middlewares;
   final Tls? tls;
 
   const HttpRouter({
     this.name,
     this.rule,
     this.service,
-    this.entryPoints,
-    this.middlewares,
+    this.entryPoints = const [],
+    this.middlewares = const [],
     this.tls,
   });
 

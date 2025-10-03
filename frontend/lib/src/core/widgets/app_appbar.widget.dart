@@ -36,10 +36,15 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      title: Text(title),
+      title: SelectableText(title),
       backgroundColor: appBarColor,
       foregroundColor: Colors.white,
       actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.light_mode_outlined),
+          tooltip: "Heller- / Dunkler Modus",
+        ),
         IconButton(
           onPressed: () {},
           icon: const Icon(Icons.refresh),

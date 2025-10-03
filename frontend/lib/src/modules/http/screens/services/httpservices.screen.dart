@@ -23,7 +23,7 @@ class HttpServicesScreen extends ConsumerScreenWidget {
 
           return ListTile(
             title: Text(service.name ?? "<kein Name>"),
-            subtitle: Text(urlsConcatted ?? "<keine Urls>"),
+            subtitle: Text(urlsConcatted),
           );
         },
       ),

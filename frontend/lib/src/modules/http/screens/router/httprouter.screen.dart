@@ -6,7 +6,6 @@ import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
 import 'package:frontend/src/core/widgets/app_screen.widget.dart';
 import 'package:frontend/src/modules/http/provider/httprouter.provider.dart';
 import 'package:frontend/src/modules/http/screens/router/httprouteredit.screen.dart';
-import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HttpRouterScreen extends ConsumerScreenWidget {
