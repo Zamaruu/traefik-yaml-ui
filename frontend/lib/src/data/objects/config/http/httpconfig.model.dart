@@ -8,14 +8,14 @@ part 'httpconfig.model.g.dart';
 class Http {
   // final List<Middleware?>? middlewares;
   // final List<ServersTransport?>? serversTransports;
-  final List<HttpService?>? services;
-  final List<HttpRouter?>? routers;
+  final List<HttpService> services;
+  final List<HttpRouter> routers;
 
   const Http({
     // this.middlewares,
     // this.serversTransports,
-    this.services,
-    this.routers,
+    this.services = const [],
+    this.routers = const [],
   });
 
   Map<String, dynamic> toJson() => _$HttpToJson(this);

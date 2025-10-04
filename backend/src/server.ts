@@ -20,17 +20,19 @@ export const configPath = envPath;
 app.use(cors());
 
 // Statische Flutter Dateien ausliefern
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "public")));
+// const __dirname = path.resolve();
+// app.use(express.static(path.join(__dirname, "public")));
 
 // SPA Routing: Alle anderen Requests auf index.html umleiten
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+// app.get("/", (req, res) => {
+//     res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
 
 app.use("/config", configRouter);
 
-// Beispiel-Endpunkt mit Typen
+app.get("/api/health", (req, res) => {
+    res.json({ status: "ok", time: new Date().toISOString() });
+});
 
 app.listen(port, () => {
     console.log(`✅ Server läuft auf http://localhost:${port}`);
