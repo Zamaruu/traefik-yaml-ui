@@ -1,0 +1,19 @@
+name: backend
+description: RESTful API for the flutter treafik-ui written in dart
+version: 1.0.0
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  path: ^1.9.0
+  shelf: ^1.4.2
+  shelf_router: ^1.1.4
+  shelf_swagger_ui: ^2.0.0
+  shelf_open_api: ^3.0.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
+  build_runner: ^2.9.0
+  shelf_open_api_generator: ^3.1.1
