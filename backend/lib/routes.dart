@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
@@ -6,7 +8,13 @@ Router createRouter() {
 
   // Basisroute
   router.get('/', (Request req) {
-    return Response.ok('👋 Willkommen bei der Dart Shelf API!');
+    final response = {"message": "Willkommen aus Dart"};
+
+
+    return Response.ok(
+      jsonEncode(response),
+      headers: {'Content-Type': 'application/json'},
+    );
   });
 
   // User-Routen
