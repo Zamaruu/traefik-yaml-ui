@@ -1,12 +1,15 @@
 import 'dart:io';
+import 'package:backend/config/enironment.dart';
 import 'package:backend/middlewares/headers.middleware.dart';
 import 'package:backend/routes.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
 
 Future<void> main(List<String> args) async {
+  await Environment.load();
+
   final ip = InternetAddress.anyIPv4;
-  const port = 3000;
+  final port = Environment.port;
 
   final handler = Pipeline()
       .addMiddleware(logRequests())
