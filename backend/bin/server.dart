@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:backend/config/enironment.dart';
+import 'package:backend/config/environment.dart';
 import 'package:backend/middlewares/headers.middleware.dart';
 import 'package:backend/routes.dart';
 import 'package:shelf/shelf.dart';
@@ -13,7 +13,7 @@ Future<void> main(List<String> args) async {
 
   final handler = Pipeline()
       .addMiddleware(logRequests())
-      .addMiddleware(defaultContentTypeJson())
+      .addMiddleware(defaultHeaders())
       .addHandler(createRouter().call);
 
   final server = await serve(handler, ip, port);

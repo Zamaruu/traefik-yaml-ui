@@ -1,6 +1,6 @@
 import 'package:shelf/shelf.dart';
 
-Middleware defaultContentTypeJson() {
+Middleware defaultHeaders() {
   return (Handler innerHandler) {
     return (Request request) async {
       final response = await innerHandler(request);
