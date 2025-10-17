@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:frontend/service_locator.dart';
-import 'package:frontend/src/data/interfaces/core/response.interface.dart';
-import 'package:frontend/src/data/objects/core/response/response.model.dart';
+import 'package:treafik_frontend_ui/service_locator.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/response.interface.dart';
+import 'package:treafik_frontend_ui/src/data/objects/core/response/response.model.dart';
 
 class AppInitalizerService {
   Future<IResponse> initializeApp() async {

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:frontend/src/core/extensions/packages/gorouter.extensions.dart';
-import 'package:frontend/src/data/interfaces/core/routable_screen.interface.dart';
-import 'package:frontend/src/global/typedefs.dart';
-import 'package:frontend/src/modules/dashboard/screens/dashboard.screen.dart';
-import 'package:frontend/src/modules/error/screens/error.screen.dart';
-import 'package:frontend/src/modules/http/screens/router/httprouter.screen.dart';
-import 'package:frontend/src/modules/http/screens/services/httpservices.screen.dart';
-import 'package:frontend/src/modules/root/screens/approot.screen.dart';
 import 'package:go_router/go_router.dart';
+import 'package:treafik_frontend_ui/src/core/extensions/packages/gorouter.extensions.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/routable_screen.interface.dart';
+import 'package:treafik_frontend_ui/src/global/typedefs.dart';
+import 'package:treafik_frontend_ui/src/modules/dashboard/screens/dashboard.screen.dart';
+import 'package:treafik_frontend_ui/src/modules/error/screens/error.screen.dart';
+import 'package:treafik_frontend_ui/src/modules/http/screens/router/httprouter.screen.dart';
+import 'package:treafik_frontend_ui/src/modules/http/screens/services/httpservices.screen.dart';
+import 'package:treafik_frontend_ui/src/modules/root/screens/approot.screen.dart';
 
 import 'src/modules/http/screens/router/httprouteredit.screen.dart';
 

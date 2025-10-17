@@ -1,12 +1,12 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:frontend/constans.dart';
-import 'package:frontend/src/core/extensions/packages/dio.extensions.dart';
-import 'package:frontend/src/data/interfaces/core/response.interface.dart';
-import 'package:frontend/src/data/objects/config/configroot.model.dart';
-import 'package:frontend/src/data/objects/core/response/valueresponse.modeldart.dart';
-import 'package:frontend/src/services/api/base.api.dart';
+import 'package:treafik_frontend_ui/constans.dart';
+import 'package:treafik_frontend_ui/src/core/extensions/packages/dio.extensions.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/response.interface.dart';
+import 'package:treafik_frontend_ui/src/data/objects/config/configroot.model.dart';
+import 'package:treafik_frontend_ui/src/data/objects/core/response/valueresponse.modeldart.dart';
+import 'package:treafik_frontend_ui/src/services/api/base.api.dart';
 
 class ConfigApiController extends BaseApi<ConfigRoot> {
   ConfigApiController(super.client);

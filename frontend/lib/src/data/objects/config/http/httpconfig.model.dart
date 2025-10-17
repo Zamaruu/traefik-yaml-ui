@@ -1,5 +1,5 @@
-import 'package:frontend/src/data/objects/config/http/httprouter.model.dart';
-import 'package:frontend/src/data/objects/config/http/httpservice.model.dart';
+import 'package:treafik_frontend_ui/src/data/objects/config/http/httprouter.model.dart';
+import 'package:treafik_frontend_ui/src/data/objects/config/http/httpservice.model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'httpconfig.model.g.dart';

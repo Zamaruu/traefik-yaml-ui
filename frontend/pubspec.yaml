@@ -1,8 +1,6 @@
-name: frontend
-description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+name: treafik_frontend_ui
+description: "(Web) UI for the dynamic treafik config file"
+publish_to: 'none'
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -44,6 +42,10 @@ dependencies:
   get_it: ^8.2.0
   toastification: ^3.0.3
   flutter_riverpod: ^2.6.1
+
+  # Local package dependencies
+  shared_models:
+    path: ../shared_models
 
 dev_dependencies:
   flutter_test:

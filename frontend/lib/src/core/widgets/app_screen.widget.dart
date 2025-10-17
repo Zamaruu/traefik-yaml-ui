@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:frontend/src/data/interfaces/core/argument.interface.dart';
-import 'package:frontend/src/data/interfaces/core/routable_screen.interface.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/argument.interface.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/routable_screen.interface.dart';
 
 abstract class StatelessScreenWidget<A extends IRouterArgument> extends StatelessWidget implements IRoutableScreen<A> {
   @override

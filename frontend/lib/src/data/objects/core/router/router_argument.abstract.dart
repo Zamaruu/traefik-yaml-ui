@@ -1,4 +1,4 @@
-import 'package:frontend/src/data/interfaces/core/argument.interface.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/argument.interface.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class RouterArgument implements IRouterArgument {

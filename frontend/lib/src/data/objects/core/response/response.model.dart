@@ -1,5 +1,5 @@
-import 'package:frontend/src/data/enums/response.enum.dart';
-import 'package:frontend/src/data/interfaces/core/response.interface.dart';
+import 'package:treafik_frontend_ui/src/data/enums/response.enum.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/response.interface.dart';
 
 class BaseResponse implements IResponse {
   @override

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:frontend/src/data/interfaces/core/response.interface.dart';
+import 'package:treafik_frontend_ui/src/data/interfaces/core/response.interface.dart';
 
 abstract class BaseApi<T extends Object> {
   final Dio client;

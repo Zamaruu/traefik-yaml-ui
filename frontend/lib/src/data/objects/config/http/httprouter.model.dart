@@ -1,4 +1,4 @@
-import 'package:frontend/src/data/objects/types.dart';
+import 'package:treafik_frontend_ui/src/data/objects/types.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'httprouter.model.g.dart';

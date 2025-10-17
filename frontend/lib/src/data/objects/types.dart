@@ -1,4 +1,4 @@
-import 'package:frontend/src/data/objects/config/http/forwardauth.model.dart';
+import 'package:treafik_frontend_ui/src/data/objects/config/http/forwardauth.model.dart';
 
 class IpAllowList {
   List<String?>? sourceRange;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:frontend/router.dart';
-import 'package:frontend/src/core/extensions/sdk/context.extensions.dart';
-import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
-import 'package:frontend/src/core/widgets/app_screen.widget.dart';
-import 'package:frontend/src/modules/http/provider/httprouter.provider.dart';
-import 'package:frontend/src/modules/http/screens/router/httprouteredit.screen.dart';
+import 'package:treafik_frontend_ui/router.dart';
+import 'package:treafik_frontend_ui/src/core/extensions/sdk/context.extensions.dart';
+import 'package:treafik_frontend_ui/src/core/widgets/app_scaffold.widget.dart';
+import 'package:treafik_frontend_ui/src/core/widgets/app_screen.widget.dart';
+import 'package:treafik_frontend_ui/src/modules/http/provider/httprouter.provider.dart';
+import 'package:treafik_frontend_ui/src/modules/http/screens/router/httprouteredit.screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HttpRouterScreen extends ConsumerScreenWidget {
