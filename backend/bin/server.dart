@@ -1,9 +1,9 @@
 import 'dart:io';
-import 'package:backend/config/environment.dart';
-import 'package:backend/middlewares/headers.middleware.dart';
-import 'package:backend/routes.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
+import 'package:treafik_frontend_api/config/environment.dart';
+import 'package:treafik_frontend_api/middlewares/headers.middleware.dart';
+import 'package:treafik_frontend_api/routes.dart';
 
 Future<void> main(List<String> args) async {
   await Environment.load();
@@ -11,10 +11,7 @@ Future<void> main(List<String> args) async {
   final ip = InternetAddress.anyIPv4;
   final port = Environment.port;
 
-  final handler = Pipeline()
-      .addMiddleware(logRequests())
-      .addMiddleware(defaultHeaders())
-      .addHandler(createRouter().call);
+  final handler = Pipeline().addMiddleware(logRequests()).addMiddleware(defaultHeaders()).addHandler(createRouter().call);
 
   final server = await serve(handler, ip, port);
   print('✅ Server läuft auf http://${server.address.host}:${server.port}');

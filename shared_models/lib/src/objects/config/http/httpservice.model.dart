@@ -1,5 +1,5 @@
-import 'package:treafik_frontend_ui/src/data/objects/config/http/loadbalancer.model.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:shared_models/src/objects/config/http/loadbalancer.model.dart';
 
 part 'httpservice.model.g.dart';
 

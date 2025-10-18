@@ -1,5 +1,5 @@
-import 'package:treafik_frontend_ui/src/data/objects/types.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:shared_models/src/objects/config/http/tls.model.dart';
 
 part 'httprouter.model.g.dart';
 
@@ -12,14 +12,7 @@ class HttpRouter {
   final List<String> middlewares;
   final Tls? tls;
 
-  const HttpRouter({
-    this.name,
-    this.rule,
-    this.service,
-    this.entryPoints = const [],
-    this.middlewares = const [],
-    this.tls,
-  });
+  const HttpRouter({this.name, this.rule, this.service, this.entryPoints = const [], this.middlewares = const [], this.tls});
 
   Map<String, dynamic> toJson() => _$HttpRouterToJson(this);
 

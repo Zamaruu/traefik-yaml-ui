@@ -1,4 +1,4 @@
-import 'package:treafik_frontend_ui/src/data/objects/config/http/forwardauth.model.dart';
+import 'package:shared_models/shared_models.dart';
 
 class IpAllowList {
   List<String?>? sourceRange;
@@ -71,22 +71,6 @@ class ServersTransport {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['name'] = name;
     data['insecureSkipVerify'] = insecureSkipVerify;
-    return data;
-  }
-}
-
-class Tls {
-  String? certresolver;
-
-  Tls({this.certresolver});
-
-  Tls.fromJson(Map<String, dynamic> json) {
-    certresolver = json['certresolver'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['certresolver'] = certresolver;
     return data;
   }
 }
