@@ -1,16 +1,21 @@
 import 'dart:convert';
-import 'package:backend/core/extensions/map.extensions.dart';
-import 'package:backend/services/configyaml.service.dart';
+import 'package:treafik_frontend_api/controller/base.controller.dart';
+import 'package:treafik_frontend_api/core/extensions/map.extensions.dart';
+import 'package:treafik_frontend_api/services/configyaml.service.dart';
 import 'package:shelf/shelf.dart';
 
-class ConfigController {
-  final ConfigService _service;
+class ConfigController extends BaseController {
+  final ConfigService configService;
 
-  ConfigController(this._service);
+  ConfigController({
+    super.path = "/config",
+    required this.configService,
+  });
 
-  Future<Response> getConfig(Request request) async {
+  @override
+  Future<Response> get(Request request) async {
     try {
-      final config = await _service.loadConfig();
+      final config = await configService.loadConfig();
       return Response.ok(config.toJson);
     } catch (e, st) {
       return Response.internalServerError(

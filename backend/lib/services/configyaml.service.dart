@@ -6,8 +6,7 @@ import 'package:path/path.dart' as path;
 class ConfigService {
   final String configPath;
 
-  ConfigService({String? configPath})
-      : configPath = configPath ?? path.join('config', 'traefik_config.yaml');
+  ConfigService({String? configPath}) : configPath = configPath ?? path.join('sample_traefik_config.yaml');
 
   /// Liest YAML ein und gibt als JSON Map zurück
   Future<Map<String, dynamic>> loadConfig() async {

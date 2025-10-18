@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:shared_models/shared_models.dart';
 import 'package:treafik_frontend_ui/constans.dart';
 import 'package:treafik_frontend_ui/src/core/extensions/packages/dio.extensions.dart';
 import 'package:treafik_frontend_ui/src/data/interfaces/core/response.interface.dart';
-import 'package:treafik_frontend_ui/src/data/objects/config/configroot.model.dart';
 import 'package:treafik_frontend_ui/src/data/objects/core/response/valueresponse.modeldart.dart';
 import 'package:treafik_frontend_ui/src/services/api/base.api.dart';
 

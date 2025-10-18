@@ -1,24 +1,19 @@
-import 'dart:convert';
-
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
+import 'package:treafik_frontend_api/controller/configyaml.controller.dart';
 
-Router createRouter() {
-  final router = Router();
+class ApiRouter {
+  final ConfigController _configController;
 
-  // Basisroute
-  router.get('/', (Request req) {
-    final response = {"message": "Willkommen aus Dart"};
+  ApiRouter({
+    required ConfigController configController,
+  }) : _configController = configController;
 
+  Handler get router {
+    final router = Router();
 
-    return Response.ok(
-      jsonEncode(response),
-      headers: {'Content-Type': 'application/json'},
-    );
-  });
+    router.mount(_configController.path, _configController.handler);
 
-  // User-Routen
-  //router.mount('/users/', userHandler);
-
-  return router;
+    return router;
+  }
 }

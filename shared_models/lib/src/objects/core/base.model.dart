@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:backend/data/interfaces/serializable.interface.dart';
+import 'package:shared_models/shared_models.dart';
 
 abstract class BaseModel implements ISerializable {
   const BaseModel();

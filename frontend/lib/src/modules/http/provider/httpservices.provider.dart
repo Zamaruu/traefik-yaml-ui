@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:treafik_frontend_ui/src/data/objects/config/http/httpservice.model.dart';
+import 'package:shared_models/shared_models.dart';
 import 'package:treafik_frontend_ui/src/modules/root/provider/rootconfig.provider.dart';
 
 final httpServicesProvider = Provider<List<HttpService>>((ref) {
@@ -8,7 +8,7 @@ final httpServicesProvider = Provider<List<HttpService>>((ref) {
   if (httpConfig == null) {
     return [];
   } else {
-    final List<HttpService> services = httpConfig.services?.whereType<HttpService>().toList() ?? [];
+    final List<HttpService> services = httpConfig.services.whereType<HttpService>().toList();
     return services;
   }
 });

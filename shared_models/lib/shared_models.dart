@@ -3,6 +3,19 @@
 /// More dartdocs go here.
 library;
 
+// ---------------------------------------------------------------------------------
+// Misc
+
+export 'src/typedefs.dart';
+
+// ---------------------------------------------------------------------------------
+// Interfaces
+
+export 'src/interfaces/serializable.interface.dart';
+
+// ---------------------------------------------------------------------------------
+// Traefik
+
 // Root
 export 'src/objects/config/configroot.model.dart';
 
