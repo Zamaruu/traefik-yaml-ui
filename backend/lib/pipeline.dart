@@ -1,5 +1,5 @@
 import 'package:shelf/shelf.dart';
-import 'package:treafik_frontend_api/routes.dart';
+import 'package:traefik_frontend_api/routes.dart';
 
 import 'core/injection/injector.dart';
 import 'middlewares/headers.middleware.dart';

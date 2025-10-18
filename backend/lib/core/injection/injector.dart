@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
-import 'package:treafik_frontend_api/controller/configyaml.controller.dart';
-import 'package:treafik_frontend_api/routes.dart';
-import 'package:treafik_frontend_api/services/configyaml.service.dart';
+import 'package:traefik_frontend_api/controller/configyaml.controller.dart';
+import 'package:traefik_frontend_api/routes.dart';
+import 'package:traefik_frontend_api/services/configyaml.service.dart';
 
 final services = GetIt.instance;
 

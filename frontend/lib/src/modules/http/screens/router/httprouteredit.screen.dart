@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_models/shared_models.dart';
-import 'package:treafik_frontend_ui/src/core/widgets/app_scaffold.widget.dart';
-import 'package:treafik_frontend_ui/src/core/widgets/app_screen.widget.dart';
-import 'package:treafik_frontend_ui/src/data/objects/core/router/base_argument.model.dart';
-import 'package:treafik_frontend_ui/src/modules/http/provider/httprouter.provider.dart';
+import 'package:traefik_frontend_shared/shared_models.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_scaffold.widget.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_screen.widget.dart';
+import 'package:traefik_frontend_ui/src/data/objects/core/router/base_argument.model.dart';
+import 'package:traefik_frontend_ui/src/modules/http/provider/httprouter.provider.dart';
 import 'package:go_router/go_router.dart';
 
 class HttpRouterEditArgument extends BaseArgument {

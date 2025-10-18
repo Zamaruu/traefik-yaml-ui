@@ -1,4 +1,4 @@
-import 'package:shared_models/shared_models.dart';
+import 'package:traefik_frontend_shared/shared_models.dart';
 
 class IpAllowList {
   List<String?>? sourceRange;

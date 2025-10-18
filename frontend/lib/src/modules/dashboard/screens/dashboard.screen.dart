@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:treafik_frontend_ui/router.dart';
-import 'package:treafik_frontend_ui/src/core/extensions/sdk/context.extensions.dart';
-import 'package:treafik_frontend_ui/src/core/widgets/app_scaffold.widget.dart';
-import 'package:treafik_frontend_ui/src/core/widgets/app_screen.widget.dart';
-import 'package:treafik_frontend_ui/src/modules/root/provider/rootconfig.provider.dart';
+import 'package:traefik_frontend_ui/router.dart';
+import 'package:traefik_frontend_ui/src/core/extensions/sdk/context.extensions.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_scaffold.widget.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_screen.widget.dart';
+import 'package:traefik_frontend_ui/src/modules/root/provider/rootconfig.provider.dart';
 
 class DashboardScreen extends ConsumerScreenWidget {
   const DashboardScreen({

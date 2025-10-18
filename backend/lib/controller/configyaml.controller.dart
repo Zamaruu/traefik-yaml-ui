@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'package:treafik_frontend_api/controller/base.controller.dart';
-import 'package:treafik_frontend_api/core/extensions/map.extensions.dart';
-import 'package:treafik_frontend_api/services/configyaml.service.dart';
+import 'package:traefik_frontend_api/controller/base.controller.dart';
+import 'package:traefik_frontend_api/core/extensions/map.extensions.dart';
+import 'package:traefik_frontend_api/services/configyaml.service.dart';
 import 'package:shelf/shelf.dart';
 
 class ConfigController extends BaseController {

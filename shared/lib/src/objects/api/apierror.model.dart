@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:shared_models/src/objects/core/base.model.dart';
+import 'package:traefik_frontend_shared/src/objects/core/base.model.dart';
 
 part 'apierror.model.g.dart';
 

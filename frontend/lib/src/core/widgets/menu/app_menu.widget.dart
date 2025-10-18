@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:treafik_frontend_ui/router.dart';
-import 'package:treafik_frontend_ui/src/core/widgets/menu/app_menu_tile.widget.dart';
+import 'package:traefik_frontend_ui/router.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/menu/app_menu_tile.widget.dart';
 import 'package:go_router/go_router.dart';
 
 class AppMenu extends StatelessWidget {

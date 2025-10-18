@@ -1,6 +1,6 @@
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
-import 'package:treafik_frontend_api/controller/configyaml.controller.dart';
+import 'package:traefik_frontend_api/controller/configyaml.controller.dart';
 
 class ApiRouter {
   final ConfigController _configController;
@@ -14,6 +14,6 @@ class ApiRouter {
 
     router.mount(_configController.path, _configController.handler);
 
-    return router;
+    return router.call;
   }
 }

@@ -1,5 +1,5 @@
-name: shared_models
-description: A starting point for Dart libraries or applications.
+name: traefik_frontend_shared
+description: Shared models for traefik ui frontend and backend
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 

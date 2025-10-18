@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:shared_models/src/objects/config/http/tls.model.dart';
+import 'package:traefik_frontend_shared/src/objects/config/http/tls.model.dart';
 
 part 'httprouter.model.g.dart';
 

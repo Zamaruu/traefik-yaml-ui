@@ -1,4 +1,4 @@
-name: treafik_frontend_api
+name: traefik_frontend_api
 description: RESTful API for the flutter treafik-ui written in dart
 publish_to: none
 version: 1.0.0
@@ -18,8 +18,8 @@ dependencies:
   json_annotation: ^4.9.0
 
   # Local package dependencies
-  shared_models:
-    path: ../shared_models
+  traefik_frontend_shared:
+    path: ../shared
   shelf_router_generator: ^1.1.2
 
 dev_dependencies:

@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
 import 'package:toastification/toastification.dart';
-import 'package:treafik_frontend_ui/router.dart';
-import 'package:treafik_frontend_ui/src/global/typedefs.dart';
-import 'package:treafik_frontend_ui/src/services/app_initalizer.service.dart';
+import 'package:traefik_frontend_ui/router.dart';
+import 'package:traefik_frontend_ui/src/global/typedefs.dart';
+import 'package:traefik_frontend_ui/src/services/app_initalizer.service.dart';
 
 void main() async {
   usePathUrlStrategy();

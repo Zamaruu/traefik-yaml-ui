@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:shared_models/src/objects/config/http/httprouter.model.dart';
-import 'package:shared_models/src/objects/config/http/httpservice.model.dart';
+import 'package:traefik_frontend_shared/src/objects/config/http/httprouter.model.dart';
+import 'package:traefik_frontend_shared/src/objects/config/http/httpservice.model.dart';
 
 part 'httpconfig.model.g.dart';
 

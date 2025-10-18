@@ -1,4 +1,4 @@
-name: treafik_frontend_ui
+name: traefik_frontend_ui
 description: "(Web) UI for the dynamic treafik config file"
 publish_to: 'none'
 
@@ -44,8 +44,8 @@ dependencies:
   flutter_riverpod: ^2.6.1
 
   # Local package dependencies
-  shared_models:
-    path: ../shared_models
+  traefik_frontend_shared:
+    path: ../shared
 
 dev_dependencies:
   flutter_test:

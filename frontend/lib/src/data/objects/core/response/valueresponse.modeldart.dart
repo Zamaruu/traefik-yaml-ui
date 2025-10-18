@@ -1,5 +1,5 @@
-import 'package:treafik_frontend_ui/src/data/interfaces/core/response.interface.dart';
-import 'package:treafik_frontend_ui/src/data/objects/core/response/response.model.dart';
+import 'package:traefik_frontend_ui/src/data/interfaces/core/response.interface.dart';
+import 'package:traefik_frontend_ui/src/data/objects/core/response/response.model.dart';
 
 class ValueResponse<T extends Object> extends BaseResponse implements IValueResponse<T> {
   @override

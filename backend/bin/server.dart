@@ -1,8 +1,8 @@
 import 'dart:io';
 import 'package:shelf/shelf_io.dart';
-import 'package:treafik_frontend_api/config/environment.dart';
-import 'package:treafik_frontend_api/core/injection/injector.dart';
-import 'package:treafik_frontend_api/pipeline.dart';
+import 'package:traefik_frontend_api/config/environment.dart';
+import 'package:traefik_frontend_api/core/injection/injector.dart';
+import 'package:traefik_frontend_api/pipeline.dart';
 
 Future<void> main(List<String> args) async {
   await Environment.load();

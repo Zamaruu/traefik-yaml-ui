@@ -1,6 +1,6 @@
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
-import 'package:treafik_frontend_api/data/interfaces/controller.interface.dart';
+import 'package:traefik_frontend_api/data/interfaces/controller.interface.dart';
 
 abstract class BaseController implements IController {
   @override

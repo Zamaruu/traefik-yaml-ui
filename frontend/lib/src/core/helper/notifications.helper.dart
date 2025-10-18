@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:treafik_frontend_ui/src/data/enums/notification.enum.dart';
+import 'package:traefik_frontend_ui/src/data/enums/notification.enum.dart';
 import 'package:toastification/toastification.dart';
 
 class NotificationHelper {

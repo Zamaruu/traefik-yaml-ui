@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_models/shared_models.dart';
-import 'package:treafik_frontend_ui/src/modules/root/provider/rootconfig.provider.dart';
+import 'package:traefik_frontend_shared/shared_models.dart';
+import 'package:traefik_frontend_ui/src/modules/root/provider/rootconfig.provider.dart';
 
 final httpRouterProvider = Provider<List<HttpRouter>>((ref) {
   final httpConfig = ref.watch(configRootProvider.select((cr) => cr.http));

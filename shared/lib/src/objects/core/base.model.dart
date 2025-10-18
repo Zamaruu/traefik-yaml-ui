@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:shared_models/shared_models.dart';
+import 'package:traefik_frontend_shared/shared_models.dart';
 
 abstract class BaseModel implements ISerializable {
   const BaseModel();
