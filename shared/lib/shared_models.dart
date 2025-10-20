@@ -9,6 +9,10 @@ library;
 export 'src/typedefs.dart';
 
 // ---------------------------------------------------------------------------------
+// API
+export 'src/objects/api/apierror.model.dart';
+
+// ---------------------------------------------------------------------------------
 // Interfaces
 
 export 'src/interfaces/serializable.interface.dart';
@@ -26,3 +30,6 @@ export 'src/objects/config/http/httprouter.model.dart';
 export 'src/objects/config/http/httpservice.model.dart';
 export 'src/objects/config/http/server.model.dart';
 export 'src/objects/config/http/tls.model.dart';
+export 'src/objects/config/http/httpmiddleware.model.dart';
+export 'src/objects/config/http/ipallowlist.model.dart';
+export 'src/objects/config/http/servertransport.model.dart';

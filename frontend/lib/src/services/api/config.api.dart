@@ -20,7 +20,7 @@ class ConfigApiController extends BaseApi<ConfigRoot> {
   @override
   Future<IValueResponse<ConfigRoot>> get({ProgressCallback? onProgress}) async {
     try {
-      final response = await client.get<Map<String, dynamic>>(
+      final response = await client.get<JsonMap>(
         endpoint,
         onReceiveProgress: onProgress,
       );
