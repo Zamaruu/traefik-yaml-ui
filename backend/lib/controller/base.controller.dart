@@ -8,9 +8,18 @@ abstract class BaseController implements IController {
 
   const BaseController({required this.path});
 
+  static String get kPathRoot => '/';
+
   @override
   Handler get handler {
     final router = Router();
+
+    router.get(kPathRoot, get);
+    router.post(kPathRoot, post);
+    router.put(kPathRoot, put);
+    router.delete(kPathRoot, delete);
+    router.patch(kPathRoot, patch);
+
     return router.call;
   }
 
