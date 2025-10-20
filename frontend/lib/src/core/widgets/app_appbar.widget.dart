@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_material_design_icons/flutter_material_design_icons.dart';
-import 'package:frontend/src/core/widgets/app_traefik_logo.widget.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_traefik_logo.widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
