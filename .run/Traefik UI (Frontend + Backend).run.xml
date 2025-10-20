@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Traefik UI (Frontend + Backend)" type="CompoundRunConfigurationType">
+    <toRun name="API Dev" type="DartCommandLineRunConfigurationType" />
+    <toRun name="WEB Dev" type="FlutterRunConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:frontend/src/data/objects/config/configroot.model.dart';
+import 'package:traefik_frontend_shared/shared_models.dart';
 
 final configRootProvider = NotifierProvider<ConfigRootNotifier, ConfigRoot>(() {
   return ConfigRootNotifier();

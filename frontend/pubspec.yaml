@@ -1,8 +1,6 @@
-name: frontend
-description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+name: traefik_frontend_ui
+description: "(Web) UI for the dynamic treafik config file"
+publish_to: 'none'
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -45,6 +43,10 @@ dependencies:
   toastification: ^3.0.3
   flutter_riverpod: ^2.6.1
 
+  # Local package dependencies
+  traefik_frontend_shared:
+    path: ../shared
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -55,8 +57,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
-  json_serializable: ^6.9.0
-  build_runner: ^2.8.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

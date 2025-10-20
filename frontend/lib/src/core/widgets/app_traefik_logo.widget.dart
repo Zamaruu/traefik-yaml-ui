@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:frontend/constans.dart';
+import 'package:traefik_frontend_ui/constans.dart';
 
 class TraefikLogo extends StatelessWidget {
   final String svgPath;

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
-import 'package:frontend/src/core/widgets/app_screen.widget.dart';
-import 'package:frontend/src/modules/http/provider/httpservices.provider.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_scaffold.widget.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_screen.widget.dart';
+import 'package:traefik_frontend_ui/src/modules/http/provider/httpservices.provider.dart';
 
 class HttpServicesScreen extends ConsumerScreenWidget {
   const HttpServicesScreen({super.key, required super.argument});

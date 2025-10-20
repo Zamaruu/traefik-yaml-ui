@@ -1,4 +1,4 @@
-import 'package:frontend/src/data/enums/response.enum.dart';
+import 'package:traefik_frontend_ui/src/data/enums/response.enum.dart';
 
 abstract interface class IResponse {
   EResponseStatus get status;

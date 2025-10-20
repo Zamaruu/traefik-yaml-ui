@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:frontend/src/core/widgets/app_appbar.widget.dart';
-import 'package:frontend/src/core/widgets/menu/app_menu.widget.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_appbar.widget.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/menu/app_menu.widget.dart';
 
 class AppScaffold extends StatelessWidget {
   final String title;

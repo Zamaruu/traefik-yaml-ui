@@ -1,16 +1,16 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:frontend/router.dart';
-import 'package:frontend/service_locator.dart';
-import 'package:frontend/src/core/helper/notifications.helper.dart';
-import 'package:frontend/src/core/widgets/app_scaffold.widget.dart';
-import 'package:frontend/src/core/widgets/app_screen.widget.dart';
-import 'package:frontend/src/data/enums/initstate.enum.dart';
-import 'package:frontend/src/data/enums/notification.enum.dart';
-import 'package:frontend/src/modules/error/widgets/error.widget.dart';
-import 'package:frontend/src/modules/root/provider/rootconfig.provider.dart';
-import 'package:frontend/src/services/api/config.api.dart';
+import 'package:traefik_frontend_ui/router.dart';
+import 'package:traefik_frontend_ui/service_locator.dart';
+import 'package:traefik_frontend_ui/src/core/helper/notifications.helper.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_scaffold.widget.dart';
+import 'package:traefik_frontend_ui/src/core/widgets/app_screen.widget.dart';
+import 'package:traefik_frontend_ui/src/data/enums/initstate.enum.dart';
+import 'package:traefik_frontend_ui/src/data/enums/notification.enum.dart';
+import 'package:traefik_frontend_ui/src/modules/error/widgets/error.widget.dart';
+import 'package:traefik_frontend_ui/src/modules/root/provider/rootconfig.provider.dart';
+import 'package:traefik_frontend_ui/src/services/api/config.api.dart';
 import 'package:go_router/go_router.dart';
 
 class AppRoot extends ConsumerStatefulScreenWidget {
