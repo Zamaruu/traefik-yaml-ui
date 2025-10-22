@@ -29,7 +29,7 @@ export 'src/objects/config/http/httpconfig.model.dart';
 export 'src/objects/config/http/httprouter.model.dart';
 export 'src/objects/config/http/httpservice.model.dart';
 export 'src/objects/config/http/server.model.dart';
-export 'src/objects/config/http/tls.model.dart';
+export 'src/objects/config/http/tls/tls.model.dart';
 export 'src/objects/config/http/httpmiddleware.model.dart';
 export 'src/objects/config/http/ipallowlist.model.dart';
 export 'src/objects/config/http/servertransport.model.dart';

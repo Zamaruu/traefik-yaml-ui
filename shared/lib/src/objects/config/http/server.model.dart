@@ -6,7 +6,15 @@ part 'server.model.g.dart';
 class Server {
   final String? url;
 
-  const Server({this.url});
+  final bool? preservePath;
+
+  final int? weight;
+
+  const Server({
+    this.url,
+    this.preservePath,
+    this.weight,
+  });
 
   Map<String, dynamic> toJson() => _$ServerToJson(this);
 
