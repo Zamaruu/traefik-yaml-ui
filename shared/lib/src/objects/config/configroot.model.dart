@@ -12,6 +12,7 @@ class ConfigRoot extends BaseModel {
 
   const ConfigRoot({this.http});
 
+  @override
   Map<String, dynamic> toJson() => _$ConfigRootToJson(this);
 
   factory ConfigRoot.fromJson(Map<String, dynamic> json) => _$ConfigRootFromJson(json);

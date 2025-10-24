@@ -5,13 +5,24 @@ part 'loadbalancer.model.g.dart';
 
 @JsonSerializable()
 class LoadBalancer {
-  final List<Server>? servers;
+  final List<Server> servers;
+
+  final bool? passHostHeader;
 
   final String? serversTransport;
 
-  const LoadBalancer({this.servers, this.serversTransport});
+  const LoadBalancer({
+    this.servers = const [],
+    this.serversTransport,
+    this.passHostHeader,
+  });
 
   Map<String, dynamic> toJson() => _$LoadBalancerToJson(this);
 
   factory LoadBalancer.fromJson(Map<String, dynamic> json) => _$LoadBalancerFromJson(json);
+
+  // --------------------------------------------------------------------------
+  // Getter
+
+  bool get hasServers => servers.isNotEmpty;
 }

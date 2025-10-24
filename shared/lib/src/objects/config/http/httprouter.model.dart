@@ -41,6 +41,7 @@ class HttpRouter extends NameableModel {
     this.tls,
   });
 
+  @override
   Map<String, dynamic> toJson() => _$HttpRouterToJson(this);
 
   factory HttpRouter.fromJson(Map<String, dynamic> json) => _$HttpRouterFromJson(json);

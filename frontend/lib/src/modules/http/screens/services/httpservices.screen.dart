@@ -18,12 +18,12 @@ class HttpServicesScreen extends ConsumerScreenWidget {
         itemCount: services.length,
         itemBuilder: (context, index) {
           final service = services[index];
-          final serverUrls = service.loadBalancer?.servers?.map((s) => s.url).whereType<String>().toList() ?? [];
-          final urlsConcatted = serverUrls.join(", ");
+          final serverUrls = service.loadBalancer?.servers.where((s) => s.hasUrl).map((s) => s.url).toList() ?? <String>[];
+          final concattedServerUrls = serverUrls.join(", ");
 
           return ListTile(
-            title: Text(service.name ?? "<kein Name>"),
-            subtitle: Text(urlsConcatted),
+            title: Text(service.name),
+            subtitle: Text(concattedServerUrls),
           );
         },
       ),

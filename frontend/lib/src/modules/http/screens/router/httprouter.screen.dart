@@ -60,7 +60,7 @@ class HttpRouterScreen extends ConsumerScreenWidget {
               itemBuilder: (context, index) {
                 final router = routers[index];
                 return ListTile(
-                  title: Text(router.name ?? "<kein Name>"),
+                  title: Text(router.name),
                   subtitle: Text(router.rule ?? "<keine Rule>"),
                   onTap: () => _openRouterEditScreen(context, router.name),
                 );

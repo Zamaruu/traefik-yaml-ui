@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:traefik_frontend_shared/shared_models.dart';
-import 'package:traefik_frontend_shared/src/objects/config/http/ipallowlist.model.dart';
 
 part 'httpmiddleware.model.g.dart';
 

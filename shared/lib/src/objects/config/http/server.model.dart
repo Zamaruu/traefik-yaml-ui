@@ -19,4 +19,9 @@ class Server {
   Map<String, dynamic> toJson() => _$ServerToJson(this);
 
   factory Server.fromJson(Map<String, dynamic> json) => _$ServerFromJson(json);
+
+  // --------------------------------------------------------------------------
+  // Getter
+
+  bool get hasUrl => url != null;
 }
