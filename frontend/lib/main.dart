@@ -4,6 +4,7 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
 import 'package:toastification/toastification.dart';
 import 'package:traefik_frontend_ui/router.dart';
+import 'package:traefik_frontend_ui/src/core/helper/color.helper.dart';
 import 'package:traefik_frontend_ui/src/global/typedefs.dart';
 import 'package:traefik_frontend_ui/src/services/app_initalizer.service.dart';
 
@@ -52,6 +53,11 @@ class _TraefikUiAppState extends State<TraefikUiApp> {
         routerConfig: appRouter,
         debugShowCheckedModeBanner: false,
         color: const Color(0xff24a1c1),
+        theme: ThemeData(
+          useMaterial3: true,
+          primaryColor: const Color(0xff24a1c1),
+          primarySwatch: generateMaterialColor(const Color(0xff24a1c1)),
+        ),
       ),
     );
   }
