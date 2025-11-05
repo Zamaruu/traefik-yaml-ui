@@ -6,6 +6,7 @@ import 'package:traefik_frontend_ui/src/global/typedefs.dart';
 import 'package:traefik_frontend_ui/src/modules/dashboard/screens/dashboard.screen.dart';
 import 'package:traefik_frontend_ui/src/modules/error/screens/error.screen.dart';
 import 'package:traefik_frontend_ui/src/modules/http/screens/router/httprouter.screen.dart';
+import 'package:traefik_frontend_ui/src/modules/http/screens/services/httpserviceedit.screen.dart';
 import 'package:traefik_frontend_ui/src/modules/http/screens/services/httpservices.screen.dart';
 import 'package:traefik_frontend_ui/src/modules/root/screens/approot.screen.dart';
 
@@ -26,6 +27,8 @@ class AppRouter {
   static const kHttpRoutersEditRoute = "$kHttpRoutersRoute/edit";
 
   static const kHttpServicesRoute = "/http/services";
+
+  static const kHttpServicesEditRoute = "$kHttpServicesRoute/edit";
 
   // -----------------------------------------------------------------------------------
   // Routes
@@ -78,7 +81,7 @@ class AppRouter {
       ),
     ]);
 
-    routes.add(
+    routes.addAll([
       GoRoute(
         path: kHttpServicesRoute,
         pageBuilder: (context, state) => _pageBuilder(
@@ -87,7 +90,15 @@ class AppRouter {
           screen: HttpServicesScreen(argument: state.asArgument),
         ),
       ),
-    );
+      GoRoute(
+        path: kHttpServicesEditRoute,
+        pageBuilder: (context, state) => _pageBuilder(
+          context,
+          state,
+          screen: HttpServiceEditScreen(argument: HttpServiceEditArgument.fromState(state)),
+        ),
+      ),
+    ]);
 
     // Auth Routes
 

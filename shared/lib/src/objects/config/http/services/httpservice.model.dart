@@ -1,7 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:traefik_frontend_shared/src/objects/config/http/loadbalancer.model.dart';
-import 'package:traefik_frontend_shared/src/objects/config/http/mirror.model.dart';
-import 'package:traefik_frontend_shared/src/objects/config/http/weightedroundrobin.model.dart';
+import 'package:traefik_frontend_shared/shared_models.dart';
+import 'package:traefik_frontend_shared/src/objects/config/http/services/loadbalancer.model.dart';
+import 'package:traefik_frontend_shared/src/objects/config/http/services/mirror.model.dart';
+import 'package:traefik_frontend_shared/src/objects/config/http/services/weightedroundrobin.model.dart';
 import 'package:traefik_frontend_shared/src/objects/core/nameable.model.dart';
 
 part 'httpservice.model.g.dart';
@@ -39,4 +40,16 @@ class HttpService extends NameableModel {
   Map<String, dynamic> toJson() => _$HttpServiceToJson(this);
 
   factory HttpService.fromJson(Map<String, dynamic> json) => _$HttpServiceFromJson(json);
+
+  // -------------------------------------------------------------------------------------------------------------
+  // Getter
+
+  EHttpServiceType get type {
+    if (loadBalancer != null) return EHttpServiceType.loadBalancer;
+    if (weighted != null) return EHttpServiceType.roundrobin;
+    if (mirroring != null) return EHttpServiceType.mirroring;
+    throw Exception(
+      "Type was accessed before service was properly initialized with either, loadbalancer, mirror or weighted configuration",
+    );
+  }
 }
